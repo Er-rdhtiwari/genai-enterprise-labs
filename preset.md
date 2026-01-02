@@ -120,6 +120,19 @@ Include:
 
 ---
 
+### 🟢 Option D – QUICK REVISION (Non-Negotiable)
+
+```
+Day X – Quick Revision
+
+Summarize today’s learning in:
+- 10 crisp bullet points
+- 3 interview-ready answers
+- 1 system design insight
+
+```
+
+
 ### 🧩 Visual Flow (Easy to remember)
 ```
 NEW CHAT
@@ -133,6 +146,8 @@ Day X – Notes Part Drill-Down
 Day X – PoC
    ↓
 Day X – Deployment
+   ↓
+Day X – Revision
    ↓
 COMMIT & MOVE ON
 ```
