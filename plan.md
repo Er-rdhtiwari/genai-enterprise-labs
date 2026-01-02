@@ -1,5 +1,3 @@
----
-
 # OVERALL STRUCTURE
 
 ## 🗓 Timeline
