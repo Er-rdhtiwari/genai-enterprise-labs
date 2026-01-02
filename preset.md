@@ -36,24 +36,52 @@ Each day, you will send **ONLY one of these**, depending on what you’re doing.
 ---
 
 ### 🟢 Option A – Daily Notes
-
 ```
 Day X – Notes
 
 Follow Plan A.
 
-Generate deep, senior-level notes for:
+Topic:
 [PASTE TODAY’S TOPIC]
 
-Include:
-- Enterprise explanation
-- Architecture reasoning
-- Interview Q&A
-- Pitfalls & trade-offs
+Step 1 – High-Level Map
+Break this topic into 5–10 logical parts/modules.
+For each part, provide:
+- Part title
+- What it is (1–2 lines)
+- Why it matters in enterprise GenAI systems
+- What I must be able to explain in interviews
+
+Step 2 – Pause
+Do NOT deep dive yet.
+Stop after the high-level map and wait for me to select the part number(s).
+
+Important rules:
+- Keep explanations senior-level
+- Focus on enterprise & production context
+- Think like a system designer, not a tutorial author
 ```
 
 ---
 
+### 🔹 Follow-up Prompt (Part Drill-Down)
+```
+Day X – Notes – Part Y
+
+Follow Plan A.
+
+Deep dive into this part.
+
+Include:
+- Clear explanation
+- Enterprise examples
+- Architecture reasoning
+- Pitfalls & trade-offs
+- Interview Q&A
+Use simple ASCII diagrams where helpful.
+```
+
+---
 ### 🟢 Option B – PoC Implementation
 
 ```
@@ -98,7 +126,9 @@ NEW CHAT
    ↓
 PASTE PRESET (ONCE)
    ↓
-Day X – Notes
+Day X – Notes Plan
+   ↓
+Day X – Notes Part Drill-Down
    ↓
 Day X – PoC
    ↓
