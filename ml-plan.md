@@ -302,6 +302,7 @@ For each part:
 Stop after the map and ask:
 “Which part number should we deep dive first?”
 ```
+---
 
 ### Day 2 Copy-Paste Prompt (MLOps + Scaling Across SQL/NoSQL/Data Lakes + Security + Deployment Readiness)
 ```
@@ -368,3 +369,36 @@ Stop after the map and ask:
 “Which part number should we deep dive first?”
 
 ```
+---
+
+### Missing Foundations
+```
+Coach mode.
+
+I’ve completed today’s planned parts for IBM Job ID 79477. Now do a “Foundation Gap Patch” for Day [1/2].
+
+Step 1 — Gap Check:
+List ONLY the foundational topics that are still missing or weak from today, grouped as:
+A) Statistics foundations
+B) ML foundations
+C) Deep Learning foundations
+D) Evaluation + calibration foundations
+E) Data quality foundations (sampling, bias, leakage)
+F) MLOps foundations (only if Day 2)
+
+Step 2 — Patch Map (drill-down):
+Create a patch plan in 10–15 small parts (no deep dive yet).
+For each part include:
+- What it is (1 line)
+- Why it matters specifically for compliance/PII classification systems
+- What I must say in interviews (2–3 bullets)
+- A micro-checkpoint (tiny exercise / pseudo-code / formula / quick example)
+
+Step 3 — Deep dive workflow:
+Ask me which patch part number to deep dive first.
+When I choose, deep dive ONLY that part using Plan A (enterprise explanation, trade-offs, pitfalls, interview Q&A, mini hands-on).
+
+```
+---
+
+---
