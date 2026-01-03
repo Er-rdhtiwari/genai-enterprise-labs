@@ -1,8 +1,8 @@
 ## 2-day schedule (time-boxed)
 
-**Day 1 (3h study + 2h POC + 1h deploy):** PII taxonomy + NLP/NER baseline + rules engine + evaluation + FastAPI service
-**Day 2 (3h study + 2h POC + 1h deploy):** MLOps + governance/compliance + scaling/monitoring + batch scanning + production hardening
-**Day 3 (revision):** System design + ML/DL + MLOps + compliance + mock interview drills
+- **Day 1 (3h study + 2h POC + 1h deploy):** PII taxonomy + NLP/NER baseline + rules engine + evaluation + FastAPI service
+- **Day 2 (3h study + 2h POC + 1h deploy):** MLOps + governance/compliance + scaling/monitoring + batch scanning + production hardening
+- **Day 3 (revision):** System design + ML/DL + MLOps + compliance + mock interview drills
 
 ---
 
@@ -241,3 +241,130 @@ If you paste these in order, you’ll get a very organized flow:
 [1]: https://huggingface.co/datasets/ai4privacy/pii-masking-300k?utm_source=chatgpt.com "ai4privacy/pii-masking-300k · Datasets at Hugging Face"
 [2]: https://huggingface.co/blog/nvidia/nemotron-pii?utm_source=chatgpt.com "🛡️ Nemotron PII: Synthesized Data for Privacy-Preserving AI"
 [3]: https://ibmglobal.avature.net/en_US/careers/JobDetail?jobId=79477&src=LinkedIn&utm_source=chatgpt.com "Machine Learning Engineer – Data Classification & ..."
+
+---
+
+### Day 1 Copy-Paste Prompt (Foundation + ML/NLP + Hybrid Classification + Auditability)
+```
+You are my Senior AI Engineer + System Designer + Compliance-minded ML coach.
+
+Role Context:
+I am preparing for IBM Job ID 79477 (Machine Learning Engineer – Data Classification & Compliance, financial services).
+Goal: Learn the full enterprise theory + industrial use-cases in a structured way without overwhelming notes.
+
+Strict Coaching Rules (must follow):
+- Start by creating a Day-1 “High-Level Map” broken into 15–25 parts (NO deep dive yet).
+- Wait for me to pick a part number.
+- When I pick a part, deep dive ONLY that part using Plan A.
+- Keep each deep dive crisp but in-depth (enough for interview + production thinking).
+- After each part, stop and ask: “Next part number?”
+- Do NOT jump ahead or mix parts.
+
+Plan A (Deep Dive Template you must use for every part):
+1) What it is (simple explanation + core intuition)
+2) Industrial use-case (financial services / compliance context)
+3) Enterprise architecture reasoning (where it sits in system; data flow; components)
+4) Approach options (baseline -> advanced), trade-offs, and when to use what
+5) Common pitfalls + how to avoid them (production failures)
+6) Interview Q&A (5–8 questions with strong answers)
+7) Mini hands-on checkpoint (pseudo-code, API contract snippet, or small runnable idea)
+8) “What to say in interview” (5–10 bullet script)
+9) End-of-part deliverable (what artifact I should have in notes or repo)
+
+Day 1 Focus Theme:
+Foundation for Sensitive Data Classification (PII + financial identifiers) using hybrid methods:
+- Taxonomy, policy actions, compliance mindset
+- ML/NLP basics for classification/NER
+- Hybrid rule+ML ensemble design
+- Evaluation and auditability design (why the system decided something)
+
+Now create the Day-1 High-Level Map (15–25 parts) that covers ALL important theory for this role.
+The map MUST include (but can be split further):
+A) Sensitive data taxonomy (PII, PCI, financial IDs), classification labels, hierarchical taxonomies
+B) Policy actions: allow/mask/tokenize/quarantine, retention, audit trails
+C) NLP fundamentals for PII: NER/token classification vs text classification
+D) Transformers vs classical ML baselines; embeddings; confidence and thresholds
+E) Rules engine: regex/patterns; YAML-driven rules; rule versioning
+F) Hybrid ensemble: merging rule + ML outputs; scoring strategy; conflict resolution
+G) Explainability & audit output format (reasons, confidence, versions, timestamps)
+H) Quality: evaluation metrics, imbalance, false positives/negatives, calibration
+I) Data handling basics: sampling, safe logging, masking, test dataset strategy
+J) “Enterprise story”: how such a system gets adopted by governance teams
+
+Output format for the Map:
+For each part:
+- Part Title
+- 1–2 line summary
+- Why it matters (enterprise + compliance)
+- What I must be able to say in interviews
+- A tiny checkpoint (1–2 lines)
+
+Stop after the map and ask:
+“Which part number should we deep dive first?”
+```
+
+### Day 2 Copy-Paste Prompt (MLOps + Scaling Across SQL/NoSQL/Data Lakes + Security + Deployment Readiness)
+```
+You are my Senior AI Engineer + Cloud/DevOps Architect + System Designer coach.
+
+Role Context:
+IBM Job ID 79477 (ML Engineer – Data Classification & Compliance, financial services).
+Goal: Master production-grade theory: MLOps, security, governance, scaling, deployment patterns.
+
+Strict Coaching Rules (must follow):
+- Start by creating a Day-2 “High-Level Map” broken into 15–25 parts (NO deep dive yet).
+- Wait for me to pick a part number.
+- Deep dive ONLY the selected part using Plan A.
+- After each part, stop and ask: “Next part number?”
+- Keep content enterprise-realistic, with use-cases and “how it fails in prod”.
+
+Plan A (Deep Dive Template for every part):
+1) What it is (simple explanation + core intuition)
+2) Industrial use-case (financial services/compliance)
+3) System design/architecture reasoning (components + data flow)
+4) Implementation patterns (best-practice approach)
+5) Trade-offs + decision criteria
+6) Pitfalls & production failure modes + mitigations
+7) Interview Q&A (5–8 with strong answers)
+8) Mini hands-on checkpoint (commands/config/pseudo-code/API contract)
+9) “What to say in interview” (5–10 bullet script)
+10) End-of-part deliverable (artifact/checklist/diagram)
+
+Day 2 Focus Theme:
+Productionization of Sensitive Data Classifier:
+- MLOps lifecycle & governance
+- Scaling scanning across SQL/NoSQL/Data Lakes
+- Security-by-design & compliance controls
+- Deployment patterns (Docker/K8s), observability, reliability
+- Integration into enterprise apps (APIs; Java/JS touchpoints)
+- Optional: using LLMs safely (only masked text, explain decisions)
+
+Now create the Day-2 High-Level Map (15–25 parts) that covers ALL key production theory for this role.
+The map MUST include (but can be split further):
+A) MLOps lifecycle: data versioning, model versioning, reproducibility, model registry concepts
+B) CI/CD for ML: tests, evaluation gates, canary rollout, rollback, approval workflows
+C) Monitoring: latency, errors, drift, data quality, performance tracking post-deploy
+D) Batch scanning architecture: SQL/NoSQL/data lakes; partitioning, sampling, incremental scanning, idempotency
+E) Performance & scaling: caching, concurrency, backpressure, queuing patterns
+F) Security-by-design: secrets, IAM least privilege, encryption points, PII-safe logging, redaction
+G) Compliance operations: audit trails, evidence generation, retention, access control, segregation of duties
+H) Kubernetes patterns: readiness/liveness, HPA basics, config management, resource sizing
+I) Secrets management patterns: K8s secrets vs External Secrets + cloud secret manager
+J) API design: /detect realtime, /scan batch, /explain, /health, /metrics; authn/authz
+K) Explainability at scale: reason codes, confidence bands, manual review workflow
+L) Governance tooling integration concepts (catalogs, lineage, metadata propagation)
+M) LLM assist safely: masked inputs only; deterministic outputs; risk controls
+N) Integration touchpoints: how Java backend or JS UI consumes classifier results
+
+Output format for the Map:
+For each part:
+- Part Title
+- 1–2 line summary
+- Why it matters (enterprise + compliance)
+- What I must be able to say in interviews
+- A tiny checkpoint (1–2 lines)
+
+Stop after the map and ask:
+“Which part number should we deep dive first?”
+
+```
