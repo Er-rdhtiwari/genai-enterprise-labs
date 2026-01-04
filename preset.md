@@ -24,9 +24,6 @@ Rules:
 Acknowledge this context and wait for my Day-specific prompt.
 ```
 
-✅ **Use this once per new chat**
-❌ Do NOT repeat it every message
-
 ---
 
 ## 2️⃣ DAILY WORKFLOW (Very Important)
