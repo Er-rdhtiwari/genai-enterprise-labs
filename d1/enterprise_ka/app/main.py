@@ -1,6 +1,6 @@
 import time
 import logging
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from app.core.config import settings
 from app.core.logging import configure_logging
 from app.core.middleware import RequestIdMiddleware
@@ -57,8 +57,9 @@ async def startup():
     await retriever.warmup()
 
 @app.post("/v1/ask", response_model=AskResponse)
-async def ask(req: AskRequest):
+async def ask(req: AskRequest, request: Request):
     start = time.time()
+    rid = getattr(request.state, "request_id", "")
     request_id = getattr(getattr(req, "__dict__", None), "request_id", None)
 
     try:
@@ -86,7 +87,7 @@ async def ask(req: AskRequest):
         )
 
         return AskResponse(
-            request_id="",  # populated by middleware response header; keep body minimal
+            request_id=rid,  # populated by middleware response header; keep body minimal
             answer=answer,
             citations=citations,
             latency_ms=latency_ms,
