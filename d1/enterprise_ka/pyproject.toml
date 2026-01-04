@@ -1,0 +1,80 @@
+# pyproject.toml — central configuration for Python tooling.
+#
+# Why this exists (even if you keep requirements.txt):
+# - Industry standard: one place to configure linters, formatters, typing, tests
+# - Reduces "works on my machine" drift
+# - Makes CI consistent and predictable
+#
+# Note:
+# - This PoC installs runtime deps from requirements.txt (simple).
+# - You *can* later move runtime deps into [project.dependencies] and use
+#   packaging tools (Poetry/uv/pip-tools). For now, we focus on tooling config.
+
+[project]
+name = "enterprise-ka"
+version = "0.1.0"
+description = "Minimal Enterprise Knowledge Assistant (RAG) built with FastAPI"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Proprietary (PoC)" }
+
+# ---------------------------
+# Ruff (Lint + Format)
+# ---------------------------
+[tool.ruff]
+# Keep formatting consistent across team/CI
+line-length = 100
+target-version = "py311"
+
+# Avoid linting large generated or data artifacts
+exclude = [
+  "data/index.json",
+  ".venv",
+  "__pycache__",
+]
+
+[tool.ruff.lint]
+# A pragmatic "enterprise PoC" ruleset:
+# E/F = pycodestyle/pyflakes
+# I   = import sorting
+# B   = bugbear (common footguns)
+# UP  = pyupgrade (modern python)
+select = ["E", "F", "I", "B", "UP"]
+
+# Common practical ignores in real repos (tune later):
+# E501: line length handled by formatter (but ruff still flags by default)
+ignore = ["E501"]
+
+[tool.ruff.format]
+# Consistent formatting style
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+# ---------------------------
+# Mypy (Typing)
+# ---------------------------
+[tool.mypy]
+python_version = "3.11"
+warn_unused_configs = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+show_error_codes = true
+
+# PoC-friendly defaults:
+# - In enterprise, you may tighten these gradually.
+# - "ignore_missing_imports" avoids noise if some libs lack type stubs.
+ignore_missing_imports = true
+
+# Helpful safety checks without going fully "strict" on day 1
+no_implicit_optional = true
+check_untyped_defs = true
+
+# ---------------------------
+# Pytest
+# ---------------------------
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+addopts = "-q"
+asyncio_mode = "auto"

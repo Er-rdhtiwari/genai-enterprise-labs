@@ -1,6 +1,6 @@
 # Capstone POC (15 days): **LLM Research Engineer Workbench**
-
-A production-like system to **run GenAI experiments** end-to-end:
+- [source](https://chatgpt.com/share/695a799a-3e08-800f-9f66-ea453abf069f)
+- A production-like system to **run GenAI experiments** end-to-end:
 
 **Core features**
 

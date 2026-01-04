@@ -1,0 +1,6 @@
+Title: Logging & PII Policy (Internal)
+
+- Do not log full PAN, Aadhaar, passport numbers, or passwords.
+- Mask sensitive values: keep last 4 digits only when necessary.
+- For debugging, prefer request_id correlation over raw payload logging.
+- Access to logs must follow least privilege and be audited.

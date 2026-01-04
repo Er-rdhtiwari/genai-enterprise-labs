@@ -1,0 +1,6 @@
+Title: On-call Incident Escalation Runbook (Internal)
+
+- Severity levels: SEV1 (critical), SEV2 (major), SEV3 (minor)
+- SEV1: page primary + secondary on-call immediately.
+- Escalate to Incident Commander within 10 minutes if impact persists.
+- Post-incident: write RCA within 48 hours.
