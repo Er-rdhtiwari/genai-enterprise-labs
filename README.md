@@ -113,6 +113,12 @@ genai-enterprise-labs/
 * Jenkins CI/CD
 * Terraform (where applicable)
 
+## 📦 Key PoCs in this repo
+
+- **enterprise_ka** — FastAPI-based Enterprise Knowledge Assistant (RAG-style, prompt-safety guardrails, OpenAI/Anthropic support). Run locally with `uvicorn app.main:app --host 0.0.0.0 --port 8000` (env vars in `.env.example`). Docker: `docker build -t enterprise-ka-backend .` from `enterprise_ka/`.
+- **enterprise_ka_frontend** — Next.js UI to query the assistant, switch prompt templates, and view citations/guardrails. Dev: `npm install && npm run dev` (set `NEXT_PUBLIC_API_URL`). Docker: `docker build -t enterprise-ka-frontend .` from `enterprise_ka_frontend/`.
+- **Jenkinsfile** — Pipeline to install/test backend, build backend image, build frontend, and build frontend image. Tailor registry/publish steps to your environment.
+
 ### 🧪 Backend
 
 * Python
