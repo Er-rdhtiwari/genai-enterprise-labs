@@ -1,6 +1,8 @@
 import httpx
 from tenacity import retry, stop_after_attempt, wait_exponential
-from app.llm.base import LLMClient, Embedder
+
+from app.llm.base import Embedder, LLMClient
+
 
 class OpenAIChatClient(LLMClient):
     def __init__(self, api_key: str, model: str, base_url: str = "https://api.openai.com/v1"):

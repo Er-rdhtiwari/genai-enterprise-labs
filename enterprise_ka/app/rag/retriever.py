@@ -1,10 +1,10 @@
-import os
 import logging
+import os
+
 import numpy as np
-from app.rag.index import (
-    IndexedChunk, build_chunks, load_index, save_index, cosine_sim
-)
+
 from app.llm.base import Embedder
+from app.rag.index import IndexedChunk, build_chunks, cosine_sim, load_index, save_index
 
 log = logging.getLogger("rag")
 
@@ -31,7 +31,7 @@ class Retriever:
 
         self._index = [
             IndexedChunk(doc_id=c.doc_id, chunk_id=c.chunk_id, text=c.text, vector=v)
-            for c, v in zip(chunks, vectors)
+            for c, v in zip(chunks, vectors, strict=True)
         ]
         save_index(self.index_path, self._index)
         log.info("Built & saved index", extra={"chunks": len(self._index)})

@@ -1,9 +1,11 @@
 import json
 import os
-import numpy as np
 from dataclasses import dataclass
-from typing import Any
+
+import numpy as np
+
 from app.rag.chunking import Chunk, chunk_text
+
 
 @dataclass
 class IndexedChunk:
@@ -19,7 +21,7 @@ def load_docs_from_dir(docs_dir: str) -> dict[str, str]:
             continue
         path = os.path.join(docs_dir, name)
         doc_id = name.replace(".txt", "")
-        with open(path, "r", encoding="utf-8") as f:
+        with open(path, encoding="utf-8") as f:
             docs[doc_id] = f.read()
     return docs
 
@@ -34,7 +36,7 @@ def save_index(index_path: str, items: list[IndexedChunk]) -> None:
         json.dump(payload, f)
 
 def load_index(index_path: str) -> list[IndexedChunk]:
-    with open(index_path, "r", encoding="utf-8") as f:
+    with open(index_path, encoding="utf-8") as f:
         payload = json.load(f)
     return [IndexedChunk(**x) for x in payload]
 

@@ -1,7 +1,9 @@
 import asyncio
+
 from app.core.config import settings
 from app.llm.openai_chat import OpenAIEmbedder
 from app.rag.retriever import Retriever
+
 
 async def main():
     embedder = OpenAIEmbedder(settings.openai_api_key, settings.openai_embed_model, settings.openai_base_url)

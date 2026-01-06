@@ -1,5 +1,6 @@
-from pydantic_settings import BaseSettings, SettingsConfigDict
 from pydantic import Field
+from pydantic_settings import BaseSettings, SettingsConfigDict
+
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
@@ -20,6 +21,8 @@ class Settings(BaseSettings):
     top_k: int = Field(default=5, alias="TOP_K")
     chunk_max_chars: int = Field(default=900, alias="CHUNK_MAX_CHARS")
     chunk_overlap_chars: int = Field(default=120, alias="CHUNK_OVERLAP_CHARS")
+    prompt_template: str = Field(default="grounded_concise", alias="PROMPT_TEMPLATE")
+    min_relevance_score: float = Field(default=0.22, alias="MIN_RELEVANCE_SCORE")
 
     log_level: str = Field(default="INFO", alias="LOG_LEVEL")
 

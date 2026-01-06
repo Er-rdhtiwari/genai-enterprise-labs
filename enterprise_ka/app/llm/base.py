@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 class LLMClient(ABC):
     @abstractmethod
     async def generate(self, system: str, user: str) -> str:
