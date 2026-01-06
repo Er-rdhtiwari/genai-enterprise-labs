@@ -5,3 +5,5 @@ pydantic-settings>=2.2
 httpx>=0.27
 numpy>=1.26
 tenacity>=8.2
+pytest==8.4.2
+ruff==0.14.10
