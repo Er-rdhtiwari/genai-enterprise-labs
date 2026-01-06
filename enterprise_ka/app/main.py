@@ -4,6 +4,7 @@ from contextlib import asynccontextmanager
 
 import httpx
 from fastapi import FastAPI, HTTPException, Request
+from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import settings
 from app.core.guardrails import GuardrailFinding, Guardrails
@@ -56,6 +57,14 @@ async def lifespan(app: FastAPI):
     yield
 
 app = FastAPI(title="Enterprise Knowledge Assistant", version="0.1.0", lifespan=lifespan)
+origins = ["*"] if settings.cors_origins.strip() == "*" else [o.strip() for o in settings.cors_origins.split(",") if o.strip()]
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 app.add_middleware(RequestIdMiddleware)
 guardrails = Guardrails(min_relevance_score=settings.min_relevance_score)
 

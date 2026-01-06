@@ -294,6 +294,7 @@ cp .env.example .env
 # - ANTHROPIC_API_KEY (required only if LLM_PROVIDER=anthropic)
 # - PROMPT_TEMPLATE (grounded_concise or grounded_reasoned)
 # - MIN_RELEVANCE_SCORE (low-signal cutoff for off-topic handling)
+# - CORS_ORIGINS (comma-separated, e.g. http://localhost:3000 for the Next.js UI)
 ```
 
 ### 3) Run the service

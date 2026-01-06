@@ -23,6 +23,7 @@ class Settings(BaseSettings):
     chunk_overlap_chars: int = Field(default=120, alias="CHUNK_OVERLAP_CHARS")
     prompt_template: str = Field(default="grounded_concise", alias="PROMPT_TEMPLATE")
     min_relevance_score: float = Field(default=0.22, alias="MIN_RELEVANCE_SCORE")
+    cors_origins: str = Field(default="*", alias="CORS_ORIGINS")
 
     log_level: str = Field(default="INFO", alias="LOG_LEVEL")
 
