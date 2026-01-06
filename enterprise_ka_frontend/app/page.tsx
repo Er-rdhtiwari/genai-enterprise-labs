@@ -83,20 +83,6 @@ export default function Home() {
 
   return (
     <div className="stack">
-      <div className="callout">
-        <span>⚡</span>
-        <div>
-          <div className="tagline">
-            <span className="pill">Prompt-safe</span>
-            <span className="pill">RAG-backed</span>
-            <span className="pill">Audit-friendly</span>
-          </div>
-          <div className="muted">
-            Ask internal questions, swap prompt templates, and inspect guardrails without leaving the browser.
-          </div>
-        </div>
-      </div>
-
       <div className="panel">
         <form className="stack" onSubmit={handleSubmit}>
           <div className="grid">
