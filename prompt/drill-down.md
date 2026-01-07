@@ -24,7 +24,7 @@ Step 2 — Deep Dive (ONLY the selected part)
 ========================
 When I reply like “Part 3”, deep dive ONLY into Part 3.
 
-For the selected part, produce a descriptive note with this structure:
+For the selected part, produce a descriptive easy to understand note with this structure:
 
 1) Core foundation (simple words)
    - Explain from scratch (avoid jargon; if used, define it)
@@ -61,7 +61,10 @@ For the selected part, produce a descriptive note with this structure:
 
 Rules:
 - Be thorough and descriptive for the selected part.
+- Be easy to understand for the selected part.
 - Do NOT cover other parts.
+- Explain used important keywords, linkage, short forms and concepts briefly in simple words
+- Avoid short forms like SLA, SLO, ACL, FFN etc or if use them, explain them briefly
 - **Minimum depth:** The deep dive for each part must be **1200–1800 words** (excluding code), unless the topic is naturally smaller.
 
 End with EXACTLY:
